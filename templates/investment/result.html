@@ -1,0 +1,47 @@
+<table>
+    <thead>
+        <tr>
+            <th>Company</th>
+            <th>Price</th>
+            <th>Returns</th>
+            <th>Volatility</th>
+            <th>Correlation</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for suggestion in suggestions %}
+        <tr>
+            <td>{{ suggestion.name }}</td>
+            <td>{{ suggestion.price }}</td>
+            <td>{{ suggestion.returns }}</td>
+            <td>{{ suggestion.volatility }}</td>
+            <td>{{ suggestion.correlation }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<style>
+    table {
+        font-family: 'Comic Sans MS', cursive, sans-serif; /* Bubbly or attractive font */
+        background: rgba(255, 255, 255, 0.1);
+        border-collapse: collapse;
+        width: 100%;
+        margin: 20px auto;
+    }
+    th, td {
+        border: 1px solid #ccc;
+        padding: 10px;
+        text-align: center;
+    }
+    th {
+        background-color: rgba(255, 255, 255, 0.3);
+        color: #fff;
+    }
+    tr:nth-child(even) {
+        background-color: rgba(255, 255, 255, 0.05);
+    }
+    tr:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+</style>

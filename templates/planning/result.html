@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Financial Planning Result</title>
+    <link href='https://fonts.googleapis.com/css?family=Bubblegum+Sans' rel='stylesheet'>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+                body {
+            font-family: 'Comic Sans MS', cursive, sans-serif; /* Bubbly or attractive font */
+            background: linear-gradient(to bottom right, #6c5b7b, #c06c84);
+            color: #fff;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column; /* Align items vertically */
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        h1 {
+            font-family: 'Bubblegum Sans';
+            font-size: 17ex;
+            margin: 0 0 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <h1>Financial Planning Result</h1>
+        <p>Age: {{ age }}</p>
+        <p>Salary: {{ salary }}</p>
+        <h2>Selected Goals:</h2>
+        <ul>
+            {% for goal in selected_goals %}
+                <li>{{ goal }} (Age: {{ ages[goal] }}, Amount: {{ amounts[goal] }})</li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>

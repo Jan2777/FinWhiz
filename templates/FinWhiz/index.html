@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href='https://fonts.googleapis.com/css?family=Bubblegum+Sans' rel='stylesheet'>
+    <meta charset="UTF-8">
+    <title>FinWhiz</title>
+    <style>
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif; /* Bubbly or attractive font */
+            background: linear-gradient(to bottom right, #6c5b7b, #c06c84);
+            color: #fff;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column; /* Align items vertically */
+        }
+        h1 {
+            font-family: 'Bubblegum Sans';
+            font-size: 17ex;
+            margin-bottom: 20px;
+            animation: slideUp 1s ease; /* Animation for sliding up */
+        }
+        p {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+            animation: slideUp 1s ease; /* Animation for sliding up */
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin: 10px;
+            animation: fadeIn 1s ease; /* Animation for fading in */
+        }
+        a {
+            display: inline-block;
+            padding: 20px 40px;
+            text-decoration: none;
+            color: #fff;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            transition: background-color 0.3s ease;
+            animation: grow 0.5s ease; /* Animation for growing */
+        }
+        a:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+        
+        @keyframes slideUp {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        @keyframes grow {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        @keyframes rotate {
+            0% { transform: rotate(0); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <h1> <span style="color: #edededdc;">FinWhiz</span>!</h1> <!-- Change font color for FinWhiz -->
+    <p>Choose a financial planning option:</p>
+    <ul>
+        <li><a href="{% url 'investment_index' %}">Investment</a></li>
+        <li><a href="{% url 'planning_index' %}">Financial Planning</a></li>
+    </ul>
+</body>
+</html>

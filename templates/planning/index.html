@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Financial Planning</title>
+    <link href='https://fonts.googleapis.com/css?family=Bubblegum+Sans' rel='stylesheet'>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif; /* Bubbly or attractive font */
+            background: linear-gradient(to bottom right, #6c5b7b, #c06c84);
+            color: #fff;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column; /* Align items vertically */
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        h1 {
+            font-family: 'Bubblegum Sans';
+            font-size: 17ex;
+            margin: 0 0 20px;
+            animation: slideUp 1s ease; /* Animation for sliding up */
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        input, select, button {
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        .checkbox-group {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .checkbox-group label {
+            margin: 10px;
+        }
+        .goals-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .goals-list label {
+            margin: 10px;
+        }
+        .goal-details {
+            display: none;
+        }
+        .btn-primary {
+            background-color: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            border-radius: 10px;
+            transition: background-color 0.3s ease;
+            animation: grow 0.5s ease; /* Animation for growing */
+        }
+        .btn-primary:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+
+        @keyframes slideUp {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes grow {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            const goalDetails = document.querySelectorAll('.goal-details');
+            checkboxes.forEach(checkbox => {
+                checkbox.addEventListener('change', function() {
+                    const goalDetailsIndex = `id_goal_${this.value}`;
+                    goalDetails.forEach(goalDetail => {
+                        if (goalDetail.id === goalDetailsIndex) {
+                            if (this.checked) {
+                                goalDetail.style.display = 'block';
+                            } else {
+                                goalDetail.style.display = 'none';
+                            }
+                        }
+                    });
+                });
+            }); 
+        });
+    </script>
+</head>
+<body>
+    <div class="container mt-5">
+        <h1>Financial Planning</h1>
+        <form method="post">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="id_age">Age:</label>
+                <input type="number" id="id_age" name="age" required>
+            </div>
+            <div class="form-group">
+                <label for="id_salary">Salary:</label>
+                <input type="number" id="id_salary" name="salary" required>
+            </div>
+            <h2>Goals:</h2>
+            <div class="checkbox-group">
+                {% for field in form.goals %}
+                    <label>{{ field }} {{ field.label }}</label>
+                {% endfor %}
+            </div>
+            {% for field in form %}
+                {% if field.name != 'age' and field.name != 'salary' and field.name != 'goals' %}
+                <div class="goal-details" id="id_goal_{{ field.name }}">
+                    <label for="id_{{ field.name }}">{{ field.label }}:</label>
+                    <input type="number" id="id_{{ field.name }}" name="{{ field.name }}" required>
+                </div>
+            {% endif %}
+        {% endfor %}
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+</body>
+</html>
