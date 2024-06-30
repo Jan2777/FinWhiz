@@ -1,10 +1,13 @@
-![FinWhiz Logo](images/finwhiz_logo.png) FinWhiz
+# ![FinWhiz Logo](images/finwhiz.png) FinWhiz
+
 
 Welcome to FinWhiz! A web-based platform that provides personalized financial planning and investment recommendations to users.
 
 🚀 Introduction
 
 You know how it’s sometimes YOLO and sometimes where is my life even heading? FinWhiz finds a middle space and helps you get to touch grass and plan if necessary. It aims to simplify the finance sector and make it easy for everyone. Yield instantly what you are looking for right now.
+![FinWhiz Logo](images/finwhiz_logo.png) FinWhiz
+This is the index page of our application which lets you select between the two options
 
 
 🌟 Features
@@ -27,6 +30,8 @@ The platform assesses the user's risk tolerance and provides investment recommen
 
 ->🧩 Portfolio Allocation
 The platform provides a suggested portfolio allocation based on the user's investment goals and risk tolerance.
+
+We have taken our data from financial times real-time live data to generate the desired result
 
 🛠 Getting Started
 Prerequisites
