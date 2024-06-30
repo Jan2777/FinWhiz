@@ -1,7 +1,6 @@
 <h1>FinWhiz</h1>
 
-
-<center># ![FinWhiz Logo](images/finwhiz.png) </center>
+![FinWhiz Logo](images/finwhiz.png) 
 
 
 Welcome to FinWhiz! A web-based platform that provides personalized financial planning and investment recommendations to users.
