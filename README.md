@@ -1,7 +1,7 @@
 # ![FinWhiz Logo](images/finwhiz.png) 
 
 
-FinWhiz
+<h1>FinWhiz
 
 
 Welcome to FinWhiz! A web-based platform that provides personalized financial planning and investment recommendations to users.
@@ -19,18 +19,22 @@ This is the index page of our application which lets you select between the two 
 
 ->📝 Financial Planning Page
 A comprehensive page that allows users to input their financial information, including age, salary, and financial goals.
+
 ![Financial Planning Page](images/financial_planning_index.png)
 
 ->📈 Investment Page
 A page that provides users with personalized investment recommendations, divided into sectors such as stocks, bonds, and mutual funds.
+
 ![Investment Page](images/investment_index.png)
 
 ->🎯 Goal-Based Investing
 Users can set specific financial goals, such as retirement or buying a house, and the platform will provide recommendations on how to achieve them.
+
 ![Planning Result](images/planning_result.png)
 
 ->📊 Risk Profiling
 The platform assesses the user's risk tolerance and provides investment recommendations accordingly.
+
 ![Investment Result](images/investment_result.png)
 
 ->🧩 Portfolio Allocation
@@ -81,16 +85,21 @@ Contributions are welcome! If you'd like to contribute to FinWhiz, please fork t
 📸 Screenshots
 
 ### Financial Planning Page
+
 ![Financial Planning Page](images/financial_planning_index.png)
 
 ### Financial Planning Result
+
 ![Planning Result](images/planning_result.png)
 
 ### Investment Page
+
 ![Investment Page](images/investment_index.png)
 
 ### Investment Result
-![Investment Result](images/investment_result.png)
+
+![Investment Result](images/investment_result.png) 
+and the suggested one's global equity indices graph gets displayed in the end
 
 Thank youuu ×͜×
 
